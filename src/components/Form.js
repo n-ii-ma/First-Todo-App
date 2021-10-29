@@ -1,6 +1,6 @@
-const Form = ({ handleInput, handleSubmit, inputText }) => {
+const Form = ({ handleInput, addTodo, inputText }) => {
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={addTodo}>
       <label>
         <input
         value={inputText}
@@ -8,7 +8,7 @@ const Form = ({ handleInput, handleSubmit, inputText }) => {
         onChange={handleInput}
         required
         />
-        <button type='submit'>Submit</button>
+        <button type='submit'>Add Todo</button>
       </label>
     </form>
   );

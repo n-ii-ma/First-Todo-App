@@ -1,32 +1,17 @@
 import { useState } from 'react';
 import Form from './components/Form';
+import TodoList from './components/TodoList';
 import './App.css';
 
 function App() {
   const [inputText, setInputText] = useState('');
-  const [todos, setTodos] = useState([
-    {
-      id: 1,
-      text: 'Dinner',
-      completed: false
-    },
-    {
-      id: 2,
-      text: 'Shopping',
-      completed: false
-    },
-    {
-      id: 3,
-      text: 'Project',
-      completed: false
-    }
-  ])
+  const [todos, setTodos] = useState([]);
 
   const handleInput = (e) => {
     setInputText(e.target.value);
   };
 
-  const handleSubmit = (e) => {
+  const addTodo = (e) => {
     e.preventDefault();
 
     let newId = Math.floor(Math.random() * 1000)
@@ -46,9 +31,10 @@ function App() {
       <header>Todo</header>
       <Form 
       handleInput={handleInput} 
-      handleSubmit={handleSubmit} 
+      addTodo={addTodo} 
       inputText={inputText}
       />
+      <TodoList todos={todos}/>
     </div>
   );
 }
