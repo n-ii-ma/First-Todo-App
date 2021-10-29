@@ -3,14 +3,14 @@ import Todo from "./Todo";
 const TodoList = ({ todos, setTodos }) => {
   return (
     <div>
-      <ul>
+      <ul className='list'>
         {todos.map((todo) => (
           <Todo
-          text={todo.text} 
-          key={todo.id} 
-          todos={todos} 
-          setTodos={setTodos}
-          todo={todo}
+            text={todo.text}
+            key={todo.id}
+            todos={todos}
+            setTodos={setTodos}
+            todo={todo}
           />
         ))}
       </ul>

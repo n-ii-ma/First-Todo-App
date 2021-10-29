@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import Form from './components/Form';
 import TodoList from './components/TodoList';
+import './reset.css';
 import './App.css';
 
 function App() {
@@ -30,7 +31,7 @@ function App() {
 
   return (
     <div className="App">
-      <header>Todo</header>
+      <header>My Todos</header>
       <Form 
       handleInput={handleInput} 
       addTodo={addTodo} 
