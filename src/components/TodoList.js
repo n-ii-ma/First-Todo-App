@@ -1,8 +1,8 @@
 const TodoList = () => {
     return (
-        <div>
+        <ul>
             
-        </div>
+        </ul>
     )
 }
 
