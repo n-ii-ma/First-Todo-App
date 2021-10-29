@@ -6,7 +6,15 @@ const Todo = ({ text, todos, setTodos, todo }) => {
   };
 
   const handleComplete = () => {
-    setTodos()
+    setTodos(todos.map((item) => {
+        if (item.id === todo.id) {
+            return {
+                ...item,
+                completed: !item.completed
+            }
+        }
+        return item;
+    }))
 
     console.log('hi')
   };
@@ -14,8 +22,8 @@ const Todo = ({ text, todos, setTodos, todo }) => {
   return (
     <div>
       <li>{text}</li>
-      <button onClick={handleComplete}>O</button>
-      <button onClick={handleDelete}>X</button>
+      <button onClick={handleComplete}>Complete</button>
+      <button onClick={handleDelete}>Remove</button>
     </div>
   );
 };
